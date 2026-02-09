@@ -6,6 +6,7 @@ const PROJECTS = [
     name: "Creative Command Center",
     short: "Creative Command Center",
     icon: "🎬",
+    projectUrl: "https://claude.ai/project/019c3e8a-c543-738e-b123-4ca066b17570",
     category: "marketing",
     catLabel: "Marketing & Creative",
     catColor: "#C75C2B",
@@ -40,6 +41,7 @@ const PROJECTS = [
     name: "Project Pre-Flight",
     short: "Project Pre-Flight",
     icon: "🛡️",
+    projectUrl: "https://claude.ai/project/019b1178-3cb0-76d3-96e9-607645a50488",
     category: "operations",
     catLabel: "Operations & QC",
     catColor: "#2D8659",
@@ -69,6 +71,7 @@ const PROJECTS = [
     name: "M365 Separation Execution Guide",
     short: "M365 Separation",
     icon: "⚙️",
+    projectUrl: "https://claude.ai/project/019c3ea8-3a1d-766a-8c1c-f029d677b27e",
     category: "infrastructure",
     catLabel: "Infrastructure",
     catColor: "#4A6FA5",
@@ -93,6 +96,7 @@ const PROJECTS = [
     name: "Prospect Data Standardization",
     short: "Prospect Data",
     icon: "📊",
+    projectUrl: "https://claude.ai/project/019c2428-4f5c-74fe-b064-a78f774c5abf",
     category: "sales",
     catLabel: "Sales & Outreach",
     catColor: "#7B5EA7",
@@ -118,6 +122,7 @@ const PROJECTS = [
     name: "CP Training — Onboarding System",
     short: "CP Training & Onboarding",
     icon: "📚",
+    projectUrl: "https://claude.ai/project/019c3eac-0a80-70df-b476-38a6b649038b",
     category: "people",
     catLabel: "People & Training",
     catColor: "#B8860B",
@@ -289,6 +294,34 @@ export default function ConsolidatedCatalog() {
                 }}>
                   {project.purpose}
                 </p>
+                {project.projectUrl && (
+                  <a
+                    href={project.projectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={e => e.stopPropagation()}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 5,
+                      marginTop: 10,
+                      padding: "4px 10px",
+                      background: isSelected ? "#fff" : "#f5f4f0",
+                      border: "1px solid #e5e3dc",
+                      borderRadius: 6,
+                      fontSize: 11,
+                      fontWeight: 500,
+                      color: "#555",
+                      textDecoration: "none",
+                      transition: "all 0.15s ease",
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.background = "#1a1a1a"; e.currentTarget.style.color = "#fff"; e.currentTarget.style.borderColor = "#1a1a1a"; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = isSelected ? "#fff" : "#f5f4f0"; e.currentTarget.style.color = "#555"; e.currentTarget.style.borderColor = "#e5e3dc"; }}
+                  >
+                    <span style={{ fontSize: 12 }}>↗</span>
+                    Open in Claude
+                  </a>
+                )}
               </div>
             );
           })}
@@ -370,6 +403,34 @@ export default function ConsolidatedCatalog() {
                 }}>
                   {project.purpose}
                 </p>
+                {project.projectUrl && (
+                  <a
+                    href={project.projectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={e => e.stopPropagation()}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 5,
+                      marginTop: 10,
+                      padding: "4px 10px",
+                      background: isSelected ? "#fff" : "#f5f4f0",
+                      border: "1px solid #e5e3dc",
+                      borderRadius: 6,
+                      fontSize: 11,
+                      fontWeight: 500,
+                      color: "#555",
+                      textDecoration: "none",
+                      transition: "all 0.15s ease",
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.background = "#1a1a1a"; e.currentTarget.style.color = "#fff"; e.currentTarget.style.borderColor = "#1a1a1a"; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = isSelected ? "#fff" : "#f5f4f0"; e.currentTarget.style.color = "#555"; e.currentTarget.style.borderColor = "#e5e3dc"; }}
+                  >
+                    <span style={{ fontSize: 12 }}>↗</span>
+                    Open in Claude
+                  </a>
+                )}
               </div>
             );
           })}
@@ -418,6 +479,34 @@ export default function ConsolidatedCatalog() {
               }}>
                 <strong style={{ color: "#666" }}>Consolidated from:</strong> {selected.mergedFrom.join(" and ")}
               </div>
+            )}
+
+            {/* Open in Claude button */}
+            {selected.projectUrl && (
+              <a
+                href={selected.projectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  padding: "9px 18px",
+                  background: "#1a1a1a",
+                  color: "#fff",
+                  borderRadius: 8,
+                  fontSize: 13,
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  marginBottom: 20,
+                  transition: "background 0.15s ease",
+                }}
+                onMouseEnter={e => e.currentTarget.style.background = "#333"}
+                onMouseLeave={e => e.currentTarget.style.background = "#1a1a1a"}
+              >
+                <span style={{ fontSize: 16 }}>↗</span>
+                Open in Claude
+              </a>
             )}
 
             {/* Purpose */}
